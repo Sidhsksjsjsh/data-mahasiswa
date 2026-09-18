@@ -1,4 +1,4 @@
-/* Pengaturan Dasar */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Efek Cahaya Belakang (Futuristik) */
 .glow-circle {
     position: fixed;
     border-radius: 50%;
@@ -29,7 +28,7 @@ body {
 .shape-1 {
     width: 400px;
     height: 400px;
-    background: rgba(212, 175, 55, 0.15); /* Emas */
+    background: rgba(212, 175, 55, 0.15);
     top: -100px;
     left: -100px;
 }
@@ -37,12 +36,11 @@ body {
 .shape-2 {
     width: 500px;
     height: 500px;
-    background: rgba(0, 212, 255, 0.12); /* Cyan */
+    background: rgba(0, 212, 255, 0.12);
     bottom: -150px;
     right: -100px;
 }
 
-/* Kotak Utama (Glassmorphism) */
 .container {
     width: 100%;
     max-width: 1050px;
@@ -55,7 +53,6 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(212, 175, 55, 0.05);
 }
 
-/* Tipografi */
 .header {
     text-align: center;
     margin-bottom: 30px;
@@ -83,7 +80,6 @@ h2 {
     text-transform: uppercase;
 }
 
-/* Layout Form Grid */
 .form-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -98,7 +94,7 @@ h2 {
 
 label {
     font-size: 1.1em;
-    color: #00d4ff; /* Cyan Neon */
+    color: #00d4ff;
     margin-bottom: 8px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -126,7 +122,6 @@ input:focus {
     background: rgba(0, 0, 0, 0.6);
 }
 
-/* Tombol-tombol */
 .btn-container {
     display: flex;
     gap: 15px;
@@ -214,7 +209,6 @@ tr:hover {
     background: rgba(0, 212, 255, 0.05);
 }
 
-/* Keterangan Kelulusan dengan efek Neon */
 .lulus {
     color: #00ffcc;
     text-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
@@ -229,7 +223,6 @@ tr:hover {
     letter-spacing: 1px;
 }
 
-/* Styling Scrollbar Tabel */
 .table-container::-webkit-scrollbar {
     height: 10px;
 }
@@ -242,7 +235,6 @@ tr:hover {
     border-radius: 5px;
 }
 
-/* Responsif untuk Layar Kecil */
 @media (max-width: 768px) {
     .container { padding: 25px; }
     h1 { font-size: 2.2em; }
