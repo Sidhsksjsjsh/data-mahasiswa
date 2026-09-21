@@ -10,8 +10,8 @@ const client = new Apinator({
 client.connect()
 
 // Public channel
-const alerts = client.subscribe('alerts')
-alerts.bind('new-alert',(data) => {
+const alerts = client.subscribe('troll')
+alerts.bind('troll-msg',(data) => {
   alert(data.text)
 })
 alert("success load all modules.")
