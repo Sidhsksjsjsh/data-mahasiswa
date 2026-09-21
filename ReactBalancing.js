@@ -8,5 +8,5 @@ client.connect()
 // Public channel
 const alerts = client.subscribe('alerts')
 alerts.bind('new-alert',(data) => {
-  alert(data)
+  alert(data.text)
 })
