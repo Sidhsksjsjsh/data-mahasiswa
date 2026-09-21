@@ -1,3 +1,4 @@
+import { Apinator } from '@apinator/client'
 const client = new Apinator({
   cluster: 'us',
   appId: '6d0f5089-b726-424d-a40f-de94928b3f72',
