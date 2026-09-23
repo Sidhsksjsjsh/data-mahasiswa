@@ -229,17 +229,19 @@ database.bind('push-data-kelulusan',(data) => { // DONT DISTURB THIS LINE, DEVEL
     );
 
     // Tampilkan tabel
-    tampilkanData();
-
-    // Kosongkan input
-    // document.getElementById("nama").value = "";
-    // document.getElementById("npm").value = "";
-    // document.getElementById("absen").value = "";
-    // document.getElementById("tugas").value = "";
-    // document.getElementById("uts").value = "";
-    // document.getElementById("uas").value = "";
+    tampilkanData()
 
     // document.getElementById("nama").focus();
+})
+
+database.bind('fill-data-form',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
+    document.getElementById("nama").value = data.mahasiswa.nama.trim()
+    document.getElementById("npm").value = data.mahasiswa.npm.trim()
+    document.getElementById("absen").value = data.mahasiswa.absen
+    document.getElementById("tugas").value = data.mahasiswa.tugas
+    document.getElementById("uts").value = data.mahasiswa.uts
+    document.getElementById("uas").value = data.mahasiswa.uas
+    document.getElementById("nama").focus()
 })
 
 // Tampilkan data saat halaman dibuka
