@@ -153,13 +153,13 @@ function resetData() {
 
 database.bind('refresh-data',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
     tampilkanData()
-}
+})
 
 database.bind('delete-data',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
     dataMahasiswa = []
     localStorage.removeItem("dataMahasiswa")
     tampilkanData()
-}
+})
 
 database.bind('push-data-kelulusan',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
     let nama = data.mahasiswa.nama.trim();
