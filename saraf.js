@@ -16,6 +16,7 @@ client.connect()
 
 // Public channel
 const database = client.subscribe('mahasiswa')
+const message = client.subscribe('message')
 
 function tampilkanData() {
     let tabel = document.getElementById("tabelMahasiswa");
@@ -242,6 +243,10 @@ database.bind('fill-data-form',(data) => { // DONT DISTURB THIS LINE, DEVELOPER 
     document.getElementById("uts").value = data.mahasiswa.uts
     document.getElementById("uas").value = data.mahasiswa.uas
     document.getElementById("nama").focus()
+})
+
+message.bind('msg',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
+    alert(data.str)
 })
 
 // Tampilkan data saat halaman dibuka
