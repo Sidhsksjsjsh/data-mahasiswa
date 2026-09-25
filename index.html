@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Nilai Mahasiswa | Fahri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="clothes.css">
+</head>
+
+<body>
+    <div class="glow-circle shape-1"></div>
+    <div class="glow-circle shape-2"></div>
+    <div class="glow-circle shape-3"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+            </div>
+            <h1>INPUT DATA <span>MAHASISWA</span></h1>
+            <h2>Sistem Rekapitulasi Nilai Akademik</h2>
+        </div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Nama Mahasiswa</label>
+                <input type="text" id="nama" placeholder="Masukkan nama">
+            </div>
+
+            <div class="form-group">
+                <label>Nomor Pokok Mahasiswa (NPM)</label>
+                <input type="text" id="npm" placeholder="Masukkan NPM">
+            </div>
+
+            <div class="form-group">
+                <label>Nilai Absen</label>
+                <input type="number" id="absen" min="0" max="100" placeholder="0 - 100">
+            </div>
+
+            <div class="form-group">
+                <label>Nilai Tugas</label>
+                <input type="number" id="tugas" min="0" max="100" placeholder="0 - 100">
+            </div>
+
+            <div class="form-group">
+                <label>Nilai UTS</label>
+                <input type="number" id="uts" min="0" max="100" placeholder="0 - 100">
+            </div>
+
+            <div class="form-group">
+                <label>Nilai UAS</label>
+                <input type="number" id="uas" min="0" max="100" placeholder="0 - 100">
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn-tambah" onclick="tambahMahasiswa()"><span>+ Tambah Data</span></button>
+            <button class="btn-reset" onclick="resetData()"><span>⟳ Reset Semua</span></button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="header header-secondary">
+            <h2>REKAP HASIL <span>NILAI MAHASISWA</span></h2>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>NPM</th>
+                        <th>Absen</th>
+                        <th>Tugas</th>
+                        <th>UTS</th>
+                        <th>UAS</th>
+                        <th>Nilai Akhir</th>
+                        <th>Grade</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelMahasiswa">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="saraf.js"></script>
+</body>
+</html>
