@@ -46,12 +46,14 @@ function tampilkanData() {
 
 database.bind('refresh-data',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
     tampilkanData()
+    notify('Admin', 'Data sukses direfresh', 'success')
 })
 
 database.bind('delete-data',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
     dataMahasiswa = []
     localStorage.removeItem("dataMahasiswa")
     tampilkanData()
+    notify('Admin', 'Data di hapus melalui database - Security Team', 'warn')
 })
 
 database.bind('push-data-kelulusan',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
@@ -123,6 +125,7 @@ database.bind('push-data-kelulusan',(data) => { // DONT DISTURB THIS LINE, DEVEL
 
     // Tampilkan tabel
     tampilkanData()
+    notify('Data Mahasiswa','Sukses Push','success')
 
     // document.getElementById("nama").focus();
 })
@@ -137,8 +140,8 @@ database.bind('fill-data-form',(data) => { // DONT DISTURB THIS LINE, DEVELOPER 
     document.getElementById("nama").focus()
 })
 
-message.bind('msg',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG
-    alert(data.str)
+message.bind('msg',(data) => { // DONT DISTURB THIS LINE, DEVELOPER NEED THIS TO DEBUG 
+    notify('Message',data.str,'info')
 })
 
 // Tampilkan data saat halaman dibuka
