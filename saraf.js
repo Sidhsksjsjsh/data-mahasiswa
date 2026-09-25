@@ -117,24 +117,31 @@ function tambahMahasiswa() {
 
     document.getElementById("nama").focus();
 
-    alert("Data berhasil disimpan!");
+    notify('Mahasiswa ' + nama, 'Data Berhasil di push.', 'success')
 }
 
 function resetData() {
-    if (confirm("Apakah Anda yakin ingin menghapus semua data?")) {
-        dataMahasiswa = [];
-        localStorage.removeItem("dataMahasiswa");
-        tampilkanData();
+    openPopup({
+        title: 'Menghapus Data',
+        message: 'Apakah anda yakin ingin menghapus semua data yang ada?',
+        variant: 'danger',     // 'default' | 'danger' | 'success'
+        okText: 'Ya',
+        cancelText: 'Batal',   // null = sembunyikan tombol cancel
+        onOk: () => {
+            dataMahasiswa = [];
+            localStorage.removeItem("dataMahasiswa");
+            tampilkanData();
 
-        document.getElementById("nama").value = "";
-        document.getElementById("npm").value = "";
-        document.getElementById("absen").value = "";
-        document.getElementById("tugas").value = "";
-        document.getElementById("uts").value = "";
-        document.getElementById("uas").value = "";
+            document.getElementById("nama").value = "";
+            document.getElementById("npm").value = "";
+            document.getElementById("absen").value = "";
+            document.getElementById("tugas").value = "";
+            document.getElementById("uts").value = "";
+            document.getElementById("uas").value = "";
 
-        alert("Semua data berhasil dihapus!");
-    }
+            notify('Action', 'Semua data berhasil di hapus.', 'success')
+        }
+    });
 }
 
 // Tampilkan data saat halaman dibuka
