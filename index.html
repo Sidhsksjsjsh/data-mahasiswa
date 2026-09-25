@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Nilai Mahasiswa | Fahri</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>🎓</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="clothes.css">
 </head>
 
 <body>
     <div class="glow-circle shape-1"></div>
     <div class="glow-circle shape-2"></div>
-    <div class="glow-circle shape-3"></div>
+
+    <!-- ===== CUSTOM TOAST NOTIFICATION ===== -->
+    <div class="notif-stack" id="notifStack"></div>
 
     <div class="container">
         <div class="header">
-            <div class="logo-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                </svg>
-            </div>
             <h1>INPUT DATA <span>MAHASISWA</span></h1>
             <h2>Sistem Rekapitulasi Nilai Akademik</h2>
         </div>
@@ -58,13 +55,43 @@
         </div>
 
         <div class="btn-container">
-            <button class="btn-tambah" onclick="tambahMahasiswa()"><span>+ Tambah Data</span></button>
-            <button class="btn-reset" onclick="resetData()"><span>⟳ Reset Semua</span></button>
+            <button class="btn-tambah" onclick="tambahMahasiswa()">+ Tambah Data</button>
+            <button class="btn-reset" onclick="konfirmasiReset()">⟳ Reset Semua</button>
+        </div>
+
+        <!-- ===== CUSTOM PARAGRAF INFO ===== -->
+        <div class="info-panel">
+            <div class="info-panel-head">
+                <span class="info-dot"></span>
+                <span class="info-title">STATUS REKAPITULASI</span>
+                <span class="info-live">● LIVE</span>
+            </div>
+            <p class="info-text" id="infoText">
+                Sistem siap menerima input. Silakan isi formulir di atas untuk memulai rekapitulasi nilai akademik mahasiswa.
+            </p>
+            <div class="info-stats">
+                <div class="stat-box">
+                    <span class="stat-num" id="statTotal">0</span>
+                    <span class="stat-name">Total</span>
+                </div>
+                <div class="stat-box stat-lulus">
+                    <span class="stat-num" id="statLulus">0</span>
+                    <span class="stat-name">Lulus</span>
+                </div>
+                <div class="stat-box stat-gagal">
+                    <span class="stat-num" id="statGagal">0</span>
+                    <span class="stat-name">Tidak Lulus</span>
+                </div>
+                <div class="stat-box stat-avg">
+                    <span class="stat-num" id="statAvg">0.00</span>
+                    <span class="stat-name">Rata-rata</span>
+                </div>
+            </div>
         </div>
 
         <div class="divider"></div>
 
-        <div class="header header-secondary">
+        <div class="header">
             <h2>REKAP HASIL <span>NILAI MAHASISWA</span></h2>
         </div>
 
@@ -89,8 +116,27 @@
             </table>
         </div>
     </div>
-    
-        <!-- ===== LOAD ORDER (penting!) ===== -->
+
+    <!-- ===== CUSTOM POPUP MODAL ===== -->
+    <div class="popup-mask" id="popupMask">
+        <div class="popup" id="popupBox">
+            <div class="popup-glow"></div>
+            <div class="popup-icon" id="popupIcon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <h3 class="popup-title" id="popupTitle">Konfirmasi</h3>
+            <p class="popup-msg" id="popupMsg">Apakah Anda yakin?</p>
+            <div class="popup-actions">
+                <button class="popup-btn popup-cancel" id="popupCancel">Batal</button>
+                <button class="popup-btn popup-ok" id="popupOk">Ya, Lanjutkan</button>
+            </div>
+        </div>
+    </div>
+
     <script src="notifikasi.js"></script>
     <script src="popup.js"></script>
     <script src="info.js"></script>
